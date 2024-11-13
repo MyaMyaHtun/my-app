@@ -1,0 +1,587 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+/* General body styles */
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f1f5f9; /* bg-slate-100 */
+    color: #1e293b; /* text-slate-900 */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #334155; /* Slate color for the header */
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Links within navigation */
+.nav-link {
+    color: #ffffff; /* White text for links */
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effects for links */
+.nav-link:hover {
+    background-color: #64748b; /* Slightly darker slate for hover */
+}
+
+/* Flexbox container for login/register links */
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Spacing between links */
+}
+
+/* Main content styles */
+main {
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 1024px; /* Controls the max width of the content */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 8px; /* Reduce spacing on smaller screens */
+    }
+}
+/* Center the card and set maximum width */
+.card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Styling for the form elements */
+input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Set margin for input containers */
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+/* Style the form labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+/* Style the button */
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #334155;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect *
+
+/* Add responsiveness */
+@media (max-width: 600px) {
+    .card {
+        padding: 1.5rem;
+    }
+
+    input {
+        padding: 0.5rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: "Poppins", sans-serif;
+    }
+}
+
+@layer components {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"],
+    textarea {
+        @apply block w-full rounded-md border-0 p-2 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-500 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm bg-white;
+    }
+    label {
+        @apply block text-sm font-medium leading-6 text-slate-900 first-letter:capitalize;
+    }
+    header {
+        @apply bg-slate-800 shadow-md;
+    }
+    nav {
+        @apply p-5 max-w-screen-lg mx-auto flex items-center justify-between;
+    }
+    main {
+        @apply max-w-screen-lg mx-auto;
+    }
+    .primary-btn {
+        @apply flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:bg-slate-400 disabled:cursor-wait;
+    }
+    .text-link {
+        @apply font-semibold text-blue-500 hover:text-blue-600;
+    }
+    .nav-link {
+        @apply text-slate-200 hover:bg-slate-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium;
+    }
+    .title {
+        @apply my-6 text-center text-3xl font-bold leading-9 text-slate-900;
+    }
+    .error {
+        @apply text-xs text-red-500 mt-1;
+    }
+    table {
+        @apply w-full text-sm text-left rounded-md shadow-lg overflow-hidden mb-6 table-auto bg-white;
+    }
+    thead {
+        @apply text-xs uppercase font-medium border-b border-slate-100 text-slate-600;
+    }
+    tbody tr {
+        @apply hover:bg-slate-100 w-full p-0;
+    }
+    th {
+        @apply px-6 py-4;
+    }
+    td {
+        @apply px-6 py-4 border-b border-slate-100;
+    }
+    .avatar {
+        @apply w-8 h-8 rounded-full overflow-hidden object-center object-cover;
+    }
+    .round-btn {
+        @apply w-8 h-8 overflow-auto rounded-full bg-slate-100 focus:outline-none focus:ring-1 focus:ring-slate-100 focus:ring-offset-2 focus:ring-offset-slate-800;
+    }
+}
+.relative {
+    position: relative;
+}
+
+.grid {
+    display: grid;
+}
+
+.place-items-center {
+    place-items: center;
+}
+
+.rounded-full {
+    border-radius: 50%;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.w-16 {
+    width: 4rem; /* 16 * 0.25rem = 4rem */
+}
+
+.h-16 {
+    height: 4rem; /* 16 * 0.25rem = 4rem */
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.absolute {
+    position: absolute;
+}
+
+.top-10 {
+    top: 2.5rem; /* 10 * 0.25rem = 2.5rem */
+}
+
+.right-0 {
+    right: 0;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem; /* 8px */
+}
+
+.font-light {
+    font-weight: 300;
+}
+
+.px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.block {
+    display: block;
+}
+
+.hover\:bg-slate-100:hover {
+    background-color: #f1f5f9;
+}
+
+.mb-1 {
+    margin-bottom: 0.25rem;
+}
+.block {
+    display: block;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.hover\:bg-slatte-100:hover {
+    background-color: #f1f5f9; /* Adjust this color to your desired hover effect */
+}
+
+.pl-4 {
+    padding-left: 1rem; /* 4 * 0.25rem = 1rem */
+}
+
+.pr-8 {
+    padding-right: 2rem; /* 8 * 0.25rem = 2rem */
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.post-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows posts to wrap if there are too many */
+    gap: 20px; /* Adds space between columns */
+}
+
+.card {
+    flex: 1 1 45%; /* Each post takes 45% of the container width */
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%; /* Stack cards in a single column on smaller screens */
+    }
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Adjust the gap between the columns as needed */
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.text-sm {
+    font-size: 0.875rem; /* This corresponds to a small text size */
+}
+
+.font-medium {
+    font-weight: 500; /* Medium font weight */
+}
+
+.text-white {
+    color: white; /* White text */
+}
+
+.bg-green-500 {
+    background-color: #22c55e; /* A green color (#22c55e from the Tailwind green-500 class) */
+}
+
+.px-3 {
+    padding-left: 0.75rem; /* Horizontal padding */
+    padding-right: 0.75rem; /* Horizontal padding */
+}
+
+.py-rounded-md {
+    padding-top: 0.5rem; /* Vertical padding */
+    padding-bottom: 0.5rem; /* Vertical padding */
+    padding-bottom: 0.5rem;
+    border-radius: 0.375rem; /* Rounded corners */
+}
+.font-bold {
+    font-weight: 700; /* Bold font weight */
+}
+
+.mb-4 {
+    margin-bottom: 1rem; /* Margin below the heading */
+}
+
+nav[role="navigation"] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav[role="navigation"] .flex-1 {
+    flex: 1;
+}
+
+nav[role="navigation"] .sm\\:hidden {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+nav[role="navigation"] .sm\\:flex {
+    display: none;
+}
+
+@media (min-width: 640px) {
+    nav[role="navigation"] .sm\\:flex {
+        display: flex;
+    }
+    nav[role="navigation"] .sm\\:hidden {
+        display: none;
+    }
+}
+
+nav[role="navigation"] .inline-flex {
+    display: inline-flex;
+}
+
+nav[role="navigation"] .items-center {
+    align-items: center;
+}
+
+nav[role="navigation"] .text-sm {
+    font-size: 0.875rem;
+}
+
+nav[role="navigation"] .font-medium {
+    font-weight: 500;
+}
+
+nav[role="navigation"] .text-gray-500 {
+    color: #6b7280;
+}
+
+nav[role="navigation"] .text-gray-700 {
+    color: #374151;
+}
+
+nav[role="navigation"] .bg-white {
+    background-color: #ffffff;
+}
+
+nav[role="navigation"] .border {
+    border-width: 1px;
+}
+
+nav[role="navigation"] .border-gray-300 {
+    border-color: #d1d5db;
+}
+
+nav[role="navigation"] .rounded-md {
+    border-radius: 0.375rem;
+}
+
+nav[role="navigation"] .cursor-default {
+    cursor: default;
+}
+
+nav[role="navigation"] .leading-5 {
+    line-height: 1.25rem;
+}
+
+nav[role="navigation"] .hover\\:text-gray-500:hover {
+    color: #6b7280;
+}
+
+nav[role="navigation"] .focus\\:outline-none:focus {
+    outline: 0;
+}
+
+nav[role="navigation"] .focus\\:ring:focus {
+    box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.5);
+}
+
+nav[role="navigation"] .focus\\:border-blue-300:focus {
+    border-color: #93c5fd;
+}
+
+nav[role="navigation"] .active\\:bg-gray-100:active {
+    background-color: #f3f4f6;
+}
+
+nav[role="navigation"] .active\\:text-gray-700:active {
+    color: #374151;
+}
+
+nav[role="navigation"] .transition {
+    transition: all 0.2s ease-in-out;
+}
+
+nav[role="navigation"] .dark\\:bg-gray-800 {
+    background-color: #1f2937;
+}
+
+nav[role="navigation"] .dark\\:border-gray-600 {
+    border-color: #4b5563;
+}
+
+nav[role="navigation"] .dark\\:text-gray-300 {
+    color: #d1d5db;
+}
+
+nav[role="navigation"] .dark\\:hover\\:text-gray-300:hover {
+    color: #021d46;
+}
+
+nav[role="navigation"] .dark\\:active\\:bg-gray-700:active {
+    background-color: #374151;
+}
+
+nav[role="navigation"] .dark\\:focus\\:border-blue-800:focus {
+    border-color: #1e40af;
+}
+
+nav[role="navigation"] .rounded-l-md {
+    border-radius: 0.375rem 0 0 0.375rem;
+}
+
+nav[role="navigation"] .rounded-r-md {
+    border-radius: 0 0.375rem 0.375rem 0;
+}
+
+nav[role="navigation"] svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+nav[role="navigation"] .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+nav[role="navigation"] .rtl\\:flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+nav[role="navigation"] .z-0 {
+    z-index: 0;
+}
+
+nav[role="navigation"] .z-10 {
+    z-index: 10;
+}
+
+nav[role="navigation"] .ml-3 {
+    margin-left: 0.75rem;
+}
+
+nav[role="navigation"] .-ml-px {
+    margin-left: -1px;
+}
+.bg-red-500 {
+    background-color: #f56565; /* A red shade (Tailwind CSS red-500 equivalent) */
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.px-2 {
+    padding-left: 0.5rem; /* Equivalent to 8px */
+    padding-right: 0.5rem; /* Equivalent to 8px */
+}
+
+.py-1 {
+    padding-top: 0.25rem; /* Equivalent to 4px */
+    padding-bottom: 0.25rem; /* Equivalent to 4px */
+}
+
+.text-xs {
+    font-size: 0.75rem; /* Equivalent to 12px */
+}
+
+.rounded-md {
+    border-radius: 0.375rem; /* Equivalent to 6px */
+}
+.bg-red-500 {
+    background-color: #f56565; /* Tailwind CSS red-500 equivalent */
+}
+.bg-red-500 {
+    background-color: #f56565; /* Tailwind CSS red-500 equivalent */
+}
+
+.flash-msg {
+    padding: 1rem; /* Adds padding inside the flash message */
+    border-radius: 0.375rem; /* Rounds the corners */
+    color: #ffffff; /* White text */
+    margin-bottom: 1rem; /* Adds space below the message */
+    font-size: 1rem; /* Adjust font size as needed */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
